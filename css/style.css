@@ -1,0 +1,467 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&family=Zilla+Slab&display=swap');
+
+:root {
+--primaryTextColor: #232e35; /*untuk title atau judul*/
+--secondaryTextColor: #888c8f; /*untuk text biasa : paragraf*/
+
+--borderColor: #f7b1b1e2;
+--lineColor: #d9d9d9; /*Untuk line di pre-title*/
+
+--primaryBackgroundColor: #e8a0a0;
+--secondaryBackgroundColor: #fbfbfb;
+--thirdBackgroundColor: #F9F9E0;
+
+--primaryIconColor: #cea98d;
+--primaryIconColorHover: #d45079;
+
+--sectionPadding: 6rem 0;
+
+--itemBorderRadius:0.7rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong {
+    color: var(--primaryTextColor);
+}
+
+p, li {
+    font-size: 15px;
+    line-height: 1.9rem;
+}
+
+p,
+span,
+label,
+input,
+textarea,
+li {
+    color: var(--secondaryTextColor);
+}
+
+a {
+    text-decoration: none;
+}
+
+/*END PREPARATION*/
+
+.main-container {
+    width: 1200px;
+    margin: 0 auto;
+}
+
+
+@media screen and (max-width: 1200px) {
+    .main-container {
+        width: 95%;
+    }
+}
+
+/*=======================Titles==========================*/
+.section-title {
+    margin: 1rem 0 4rem;
+    font-size: 2rem;
+}
+
+.pre-title {
+    text-decoration: uppercase;     /*Huruf besar semua*/
+    letter-spacing: 0.5rem;         /*Jarak antar karakter*/
+    color: var(--secondaryTextColor);
+    position: relative;
+    padding-left: 40px;
+    width: fit-content;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+.pre-title::before {                /*Membuat garis yg dsmping my name is */
+    content: "";
+    width: 30px;
+    height: 1px;
+    background: var(--lineColor);
+    position: absolute;
+    display: block;
+    left: 0;
+    top: 50%;
+}
+
+
+/*===================Layouts, untuk bagian responsif========================*/
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+}
+
+
+
+/*========================Logo dan Navigation Menu=================================*/
+.nav {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 0;
+    padding-right: 10px;
+    padding-left: 10px;
+    position: fixed;
+    top: 0;
+    background-color: white;
+    width: 1200px;   
+}
+
+nav {
+    display: flex;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2.3rem;
+}
+
+
+/*Logo*/
+.logo {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+    font-size: 2rem;
+}
+
+.logo a {
+    color: var(--primaryIconColorHover)
+}
+
+
+/*Navigation Menu*/
+nav ul li {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+
+}
+
+nav ul li a {
+    color: var(--secondaryTextColo);
+    font-weight: bolder;
+}
+
+nav ul li a:hover {
+    color : var(--primaryIconColorHover)
+}
+
+/*Burger*/
+.burger div {
+    width: 25px;
+    height: 2px;
+    background-color:var(--secondaryTextColor);
+    margin: 7px;
+    transition: all 0.3s;
+    z-index: 99;
+}
+
+.burger {
+    display: none;
+    z-index: 99;
+    position: fixed;
+    top: 33px;
+    right: 35px;
+}
+
+
+/*===========================Home================================*/
+#home {
+    height: 720px;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /*Memebagi mntadi 2 kolom yg sama besar*/
+    align-items: center;
+}
+
+.home-name {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 0.5rem 0 1rem;
+}
+
+.home-name span {
+    color: var(--primaryIconColorHover);
+}
+
+
+.home-right img {
+    width: 65%;
+    border-radius: 60%;
+    border: 8px solid var(--borderColor);
+    margin-bottom: 10px;
+}
+
+.home-right {
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/*===========================EDUCATIONS================================*/
+#educations {
+    padding: var(--sectionPadding);
+    background-color: var(--sectionPadding);
+}
+
+
+.educations .pre-title { 
+    margin: 0 auto;
+}
+
+.educations-title {
+    text-align: center;
+}
+
+.education {
+    padding: 3rem 2rem;
+    background: hsla(0, 100%, 92%, 0.982);
+    border-radius: var(--itemBorderRadius);
+}
+
+.education h4 {
+    margin: 1.5rem 0;
+    font-weight: 500;
+    font-size: 1.05rem;
+    text-align: center;
+}
+
+.education-icon {
+    width: fit-content;
+    margin: 0 auto;
+    padding: 1rem 1.3rem;
+    border-radius: 0.5rem;
+}
+
+.education-icon svg {
+    fill: var(--primaryTextColor);
+}
+
+
+/*=================================Portofolio=======================*/
+#portfolios {
+    padding: var(--sectionPadding);
+}
+
+.portfolio {
+    border-radius: var(--itemBorderRadius);
+    overflow: hidden; /*Supaya gambar diatas ikut border radiusnya*/
+    border: 1px solid #d2d4d8;
+}
+
+.portfolio-cover {
+    height: 300px;
+    text-align: center;
+}
+
+.portfolio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.portfolio-info {
+    padding: 2rem 1.5rem;
+}
+
+.portfolio-title {
+    gap: 1rem;
+}
+
+
+.portfolio h4 {
+    font-weight: 500;
+    font-size: 1.05rem;
+    text-align: center;
+}
+.portfolio p {
+    text-align: justify;
+}
+
+
+
+/*========================SKILLS AND EXPERIENCES=====================*/
+#experiences {
+    padding: var(--sectionPadding);
+}
+
+.experiences-grid {
+    display: grid;
+    /*grid-template-columns: 40% 60%;*/
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 3rem;
+}
+
+.experience {
+    display: flex;
+    gap: 1rem;
+}
+
+.experience .line {
+    padding: 0 0.7rem;
+}
+
+
+/*ini to temannya bulat-bulat dibgian line tuu yg ky mumu kg bdiri sndiri*/
+.experience .line div {
+    width: 2px;
+    height: 100%;
+    background: var(--primaryTextColor);
+    position: relative;
+}
+
+.experience-years {
+    margin-bottom: 3rem;
+    margin-top: 10px;
+}
+
+/*bulat-bulat dibgian line, mumu p tmg*/
+.experience .line div:before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    background: var(--primaryIconColorHover);
+    border-radius: 50%;
+    position: absolute;
+    left: -6px;
+}
+
+.experiences-kanan p {
+    text-align: justify;
+}
+
+.experiences-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-top: 1.5rem;
+    margin-top: auto;
+}
+
+.experiences-kanan ul {
+    line-height: 2rem;
+    padding: 0 1rem;
+}
+
+
+/*============================ CONTACT =============================*/
+#contact {
+    padding: var(--sectionPadding);
+}
+
+.contact {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+/*Contact section -  Bagian Kanan*/
+.contact-left div {
+    margin-bottom: 1.4rem;
+}
+
+.contact-left input, 
+.contact-left textarea {
+    width: 100%;
+    padding: .75rem 1.3rem;
+    font-family: "roboto", sans-serif;
+    background: var(--secondaryBackgroundColor);
+    border: 1px solid #B6BBC4;
+    border-radius: 3px;
+    resize: none;
+}
+
+.contact-left input::placeholder, 
+.contact-left textarea::placeholder {
+    color: #9d9fa1;
+}
+
+.contact-left input:focus,
+.contact-left textarea:focus {
+    outline: none;
+    border: 1px solid var(--secondaryTextColor);
+}
+
+.btn-submit {
+    width: 100%;
+    padding: .75rem 1.3rem;
+    background-color: var(--primaryIconColorHover);
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .2s ease-in-out;
+}
+
+/*Contact section -  Bagian kanan*/
+.contact-item {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom:  2.5rem;
+}
+
+.contact-item-icon {
+    background: var(--thirdBackgroundColor);
+    width: 53px;
+    height: 53px;
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    resize: none;
+}
+
+.contact-item-icon svg {
+    fill: var(--primaryIconColorHover);
+}
+
+.contact-item-detail h4 {
+    margin-bottom: 0.6rem;
+}
+
+.contact-item-detail p a {
+    color: var(--primaryTextColor) ;
+}
+
+
+
+/*=========================Footer section=====================================*/
+footer {
+    padding: 1.7rem 0;
+    background: var(--secondaryBackgroundColor);
+    text-align: center;
+
+}
+
+.footer-icons {
+    margin-bottom: 1rem;
+}
+
+.footer-icons a {
+    margin: 0 0.5rem;
+}
+
+.footer-icons svg {
+    fill: #3e3f40;
+}
+
+.footer-icons a:hover svg {
+    fill: #000;
+}

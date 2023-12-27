@@ -1,0 +1,105 @@
+@media screen and (max-width: 825px) {
+    
+    /*=====================BURGER==========================*/
+    .burger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .toggle-burger .line-1 {
+        transform: rotate(-45deg) translate(-5px, 7px);
+    }
+
+    .toggle-burger .line-2 {
+        opacity: 0;
+    }
+
+    .toggle-burger .line-3 {
+        transform: rotate(-135deg) translate(5px, 7px);
+    }
+    
+    /*=====================NAVIGASI==========================*/
+    nav {
+        position: fixed;
+        width: 40%;
+        right: 1rem;
+        top: 1rem;
+        height: 100%;
+        flex-direction: column;
+        transform: translateX(100%);
+        justify-content: center;
+    }
+
+    nav ul {
+        height: 100hv;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .nav-active {
+        transform: translateX(0);
+        display: flex;
+        background-color: white;
+        transition: 0.5s ease-in-out;
+    }
+
+    /*=====================TITLES==========================*/
+    .section-title {
+        font-size: 1.6rem;
+         margin: 0.6rem 0 2.5rem;
+    }
+
+    .pre-title {
+        font-size: 0.8rem;
+    }
+
+    /*=====================ABOUT ME==========================*/
+    #home {
+        grid-template-columns: 1fr;
+        height: fit-content;
+    }
+
+    .home-right {
+        order: -1;
+    }
+
+    .home-right img {
+        width: 60%;
+        margin-top: 7rem;
+    }
+
+    .home-left {
+        text-align: center;
+        padding-bottom: 5rem;
+    }
+
+    .home-left .pre-title {
+        margin: 0 auto;
+    }
+
+    .home-name {
+        font-size: 2.3rem;
+        margin-bottom: 0.5rem;
+    }
+
+    /*=====================EDUCATIONS==========================*/
+    .educations-grid {
+        gap: 1rem;
+    }
+
+    /*=====================FOOTER==========================*/
+    footer {
+        padding: 2rem 0;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    /*=====================TITLES==========================*/
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .pre-title {
+        font-size: 0.7rem;
+    }
+}
